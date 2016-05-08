@@ -37,7 +37,7 @@
   # src = ttaas-irb.png
   # relative_width = 100
 
-= mjd
+= mjd?
  # enscript ruby
  > Date.today == Date.tomorrow
  => true
@@ -46,10 +46,96 @@
  > Date.yesterday
  => 2016-04-10
 
+= mjd!
+ # enscript ruby
+ $ irb -r date
+ > Date.today.mjd
+ => 57489
+
+修正ユリウス日
+
+Modified Julian Date
+
+= mjd!
+ # enscript ruby
+ # config/application.rb
+ module RailsTimez
+   class Application < Rails::Application
+     ENV['TZ'] = 'UTC'
+     config.time_zone = 'America/Los_Angeles'
+   end
+ end
+
+= mjd!
+ # enscript sh
+ $ heroku run date +%Z
+ Running date +%Z ... up, run.1234
+ UTC
+
+= mjd!
+ # enscript ruby
+ > Date.today == Date.tomorrow
+ => true
+ > Date.today
+ => 2016-04-12
+ > Date.yesterday
+ => 2016-04-10
+
+= Ruby vs Rails (irb)
+ # enscript ruby
+ $ bundle exec irb -r timecop
+ > Timecop.freeze(
+   Time.new(2016, 4, 11, 18, 59, 0, "-07:00"))
+ => 2016-04-12 01:59:00 +0000
+ 
+ > Date.today
+ => #<Date: 2016-04-11 ((2457490j,0s,0n),+0s,2299161j)>
+ > Date.yesterday
+ #=> NoMethodError: undefined method `yesterday' for Date:Class
+ > Date.tomorrow
+ #=> NoMethodError: undefined method `tomorrow' for Date:Class
+
+= Ruby vs Rails (rails c)
+ # enscript ruby
+ $ bundle exec rails c
+ > Timecop.freeze(
+   Time.new(2016, 4, 11, 18, 59, 0, "-07:00"))
+ => 2016-04-12 01:59:00 +0000
+ 
+ > Date.today
+ => Tue, 12 Apr 2016
+ > Date.yesterday
+ => Sun, 10 Apr 2016
+ > Date.tomorrow
+ => Tue, 12 Apr 2016
+
+= Ruby vs Rails
+ # enscript ruby
+ $ bundle exec irb -r timecop
+ > Timecop.freeze(
+   Time.new(2016, 4, 11, 18, 59, 0, "-07:00"))
+ => 2016-04-12 01:59:00 +0000
+
+今日:
+* 4月12日 (UTC +00:00)
+* 4月11日 (PDT -07:00)
+
+= Railsを知らない子はRailsの設定を知らない
+
+= @jnchito「RailsならTimeWithZoneを使う」
+
+= TimeWithZone
+ # enscript ruby
+ > Time.zone.today == Time.zone.tomorrow
+ => false
+ > Time.zone.today
+ => Mon, 11 Apr 2016
+ > Time.zone.yesterday
+ => Sun, 10 Apr 2016
+
 = URLs
-* http://regional.rubykaigi.org/tokyu10/
-* https://twitter.com/heroku/status/719712029343395841
-* https://twitter.com/edmundleexz/status/719706359759917056
+* @heroku/status/719712029343395841
+* @edmundleexz/status/719706359759917056
 * https://github.com/zunda/rails-timez
 * http://qiita.com/jnchito/items/cae89ee43c30f5d6fa2c
 
