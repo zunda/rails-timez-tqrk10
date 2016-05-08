@@ -1,0 +1,59 @@
+= Railsの日付とか時刻オブジェクトたちはどこのタイムゾーンにいるでしょうか
+
+# : subtitle
+#    SUBTITLE
+#: author
+#   zunda
+# : institution
+#    Heroku/Support
+# : content-source
+#    TokyuRubykaigi10
+# : date
+#    2016-05-29
+# : allotted-time
+#    5m
+: theme
+   lightning-talk-with-code
+
+= @zundan
+  # image
+  # src = anmitsu.jpg
+  # relative_height = 100
+= @zundan
+  # image
+  # src = heroku-logotype-horizontal-purple.png
+  # relative_width = 100
+
+= TTaaS
+= @heroku
+  # image
+  # src = ttaas.png
+  # relative_width = 100
+
+= Time Travel as a Service
+
+= @edmundleexz
+  # image
+  # src = ttaas-irb.png
+  # relative_width = 100
+
+= mjd
+ # enscript ruby
+ > Date.today == Date.tomorrow
+ => true
+ > Date.today
+ => 2016-04-12
+ > Date.yesterday
+ => 2016-04-10
+
+= URLs
+* http://regional.rubykaigi.org/tokyu10/
+* https://twitter.com/heroku/status/719712029343395841
+* https://twitter.com/edmundleexz/status/719706359759917056
+* https://github.com/zunda/rails-timez
+* http://qiita.com/jnchito/items/cae89ee43c30f5d6fa2c
+
+= CC BY-ND 4.0
+Presented as a lightning talk in TokyuRubykaigi10 #trk10 on 2016-05-29
+
+Copyright 2016 by zunda <zundan@gmail.com>
