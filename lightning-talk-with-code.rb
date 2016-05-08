@@ -1,3 +1,5 @@
+@default_headline_line_color ||= "#80b020"
+
 include_theme("newline-in-slides")
 include_theme("default-slide")
 include_theme("default-title-text")
