@@ -142,6 +142,19 @@ Modified Julian Date
  > Time.zone.now
  => Mon, 11 Apr 2016 18:59:00 PDT -07:00
 
+= あ、そういえば
+ # enscript sql
+ $ heroku pg:psql
+ ---> Connecting to DATABASE_URL
+   :
+ app-name:DATABASE=> SELECT current_date, current_time;
+     date    |       timetz       
+ ------------+--------------------
+  2016-05-12 | 03:05:14.943494+00
+ (1 row)
+
+Heroku PostgresもUTCで待ってます。
+
 = URLs
 * @heroku/status/719712029343395841
 * @edmundleexz/status/719706359759917056
