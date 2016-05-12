@@ -179,6 +179,16 @@ Modified Julian Date
 
 Heroku PostgresもUTCで待ってます。
 
+= サポート
+
+= 「昨日の夜アプリが遅かったんだけど」
+
+= どこのタイムゾーンで昨日よー
+
+= そもそも 今 何日よー
+
+= 時刻には日付とタイムゾーンもよろしく
+
 = URLs
 * @heroku/status/719712029343395841
 * @edmundleexz/status/719706359759917056
