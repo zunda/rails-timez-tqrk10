@@ -142,6 +142,30 @@ Modified Julian Date
  > Time.zone.now
  => Mon, 11 Apr 2016 18:59:00 PDT -07:00
 
+= ユーザー毎のタイムゾーン
+
+= ※Pumaはマルチスレッド
+
+= ユーザー毎のタイムゾーン
+ # enscript ruby
+ Thread.new do
+   ENV['TZ'] = tz
+   converted = Time.now.strftime("%H:%M")
+     :
+ end
+
+= ユーザー毎のタイムゾーン
+ # enscript sh
+ $ bundle exec rake timezones:sys:travel
+ Traveling time ...
+ 03:00 UTC became 12:00 in UTC (shuold be 03:00)
+ 03:00 UTC became 22:00 in UTC (shuold be 03:00)
+ 03:00 UTC became 04:00 in HST (shuold be 17:00)
+ 03:00 UTC became 17:00 in CET (shuold be 04:00)
+ 03:00 UTC became 03:00 in HST (shuold be 17:00)
+
+= ENV['TZ']変えるのはスレッドセーフじゃない
+
 = あ、そういえば
  # enscript sql
  $ heroku pg:psql
