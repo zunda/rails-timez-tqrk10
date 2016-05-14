@@ -142,16 +142,16 @@ Modified Julian Date
  > Time.zone.now
  => Mon, 11 Apr 2016 18:59:00 PDT -07:00
 
-= ユーザー毎のタイムゾーン
+= ユーザー毎のタイムゾーン変換
 = ※Pumaはマルチスレッド
-= ユーザー毎のタイムゾーン
+= タイムゾーン変換
  # enscript ruby
  Thread.new do
    ENV['TZ'] = tz
    time_str = time.strftime("%H:%M")
      :
  end
-= ユーザー毎のタイムゾーン
+= タイムゾーン変換
  # enscript sh
  $ bundle exec rake timezones:sys:travel
  Traveling time ...!!!!
@@ -160,14 +160,14 @@ Modified Julian Date
  03:00 UTC became 12:00 in EST (shuold be 22:00)
  03:00 UTC became 17:00 in Japan (shuold be 12:00)
 = ENV['TZ']変えるのはスレッドセーフじゃない
-= ユーザー毎のタイムゾーン
+= タイムゾーン変換
  # enscript ruby
  Thread.new do
    time_str = time_with_zone.\
      in_time_zone(tz).strftime("%H:%M")
      :
  end
-= ユーザー毎のタイムゾーン
+= タイムゾーン変換
  # enscript sh
  $ bundle exec rake timezones:rails:travel
  Traveling time ...
