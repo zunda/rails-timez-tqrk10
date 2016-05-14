@@ -174,8 +174,8 @@ Modified Julian Date
  completed time travel
 = in_time_zoneはスレッドセーフっぽい
 
-= でもどうやって？
-= でもどうやって？
+= どうやって？
+= どうやって？
  # enscript sh
  $ grep tzinfo Gemfile.lock
       tzinfo (~> 1.1)
