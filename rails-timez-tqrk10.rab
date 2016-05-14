@@ -181,6 +181,70 @@ Modified Julian Date
 
 = in_time_zone()はスレッドセーフっぽい
 
+= でもどうやって？
+
+= でもどうやって？
+ # enscript sh
+ $ grep tzinfo Gemfile.lock
+      tzinfo (~> 1.1)
+    tzinfo (1.2.2)
+
+= github/tzinfo/tzinfo
+
+= Ruby Timezone Library
+
+= メンテナンス大変じゃね？
+
+= TZInfo will search for a zoneinfo directory
+
+= zoneinfo directory
+ # enscript ruby
+ > require 'tzinfo/data'
+ # LoadError: cannot load such file -- tzinfo/data
+ > TZInfo::ZoneinfoDataSource::DEFAULT_SEARCH_PATH
+ => ["/usr/share/zoneinfo",
+     "/usr/share/lib/zoneinfo",
+     "/etc/zoneinfo"]
+
+= zoneinfo directory
+ # enscript sh
+ $ ls /usr/share/zoneinfo/
+ +VERSION    Cuba      GMT-0     MET       ROK
+ Africa/     EET       GMT0      MST       Singapore
+ America/    EST       Greenwich MST7MDT   Turkey
+ Antarctica/ EST5EDT   HST       Mexico/   UCT
+ Arctic/     Egypt     Hongkong  NZ        US/
+ Asia/       Eire      Iceland   NZ-CHAT   UTC
+ Atlantic/   Etc/      Indian/   Navajo    Universal
+ Australia/  Europe/   Iran      PRC       W-SU
+ Brazil/     Factory   Israel    PST8PDT   WET
+ CET         GB        Jamaica   Pacific/  Zulu
+ CST6CDT     GB-Eire   Japan     Poland    iso3166.tab
+ Canada/     GMT       Kwajalein Portugal  posixrules
+ Chile/      GMT+0     Libya     ROC       zone.tab
+
+= よくできてた！
+
+= よくできてた！
+ $ bundle exec rake tzinfo:patch
+   :
+ TZInfo::TimezoneOffset.new
+   @abbreviation = KST
+   @std_offset = 0
+   @utc_offset = 32400
+   @utc_total_offset = 32400
+ TZInfo::TimezoneOffset#to_local(2015-08-15 00:00:00 UTC)
+ 2015-08-15 08:30:00 +0830
+
+= ちなみに
+= github/tzinfo/ tzinfo-data
+= Timezone Data for TZInfo
+= github/tzinfo/tzinfo-data
+  # image
+  # src = tzinfo-data-2016d.png
+  # relative_width = 100
+= ちゃんとメンテナンスされてる！
+
 = あ、そういえば
  # enscript sql
  $ heroku pg:psql
