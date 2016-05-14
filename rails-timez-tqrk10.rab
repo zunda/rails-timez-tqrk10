@@ -175,22 +175,16 @@ Modified Julian Date
 = in_time_zoneはスレッドセーフっぽい
 
 = でもどうやって？
-
 = でもどうやって？
  # enscript sh
  $ grep tzinfo Gemfile.lock
       tzinfo (~> 1.1)
     tzinfo (1.2.2)
-
 = github/tzinfo/tzinfo
-
 = Ruby Timezone Library
-
 = メンテナンス大変じゃね？
-
-= TZInfo will search for a zoneinfo directory
-
-= zoneinfo directory
+= "TZInfo will search for a zoneinfo directory"
+= Zoneinfo directory
  # enscript ruby
  > require 'tzinfo/data'
  # LoadError: cannot load such file -- tzinfo/data
@@ -198,8 +192,7 @@ Modified Julian Date
  => ["/usr/share/zoneinfo",
      "/usr/share/lib/zoneinfo",
      "/etc/zoneinfo"]
-
-= zoneinfo directory
+= Zoneinfo directory
  # enscript sh
  $ ls /usr/share/zoneinfo/
  +VERSION    Cuba      GMT-0     MET       ROK
@@ -215,9 +208,7 @@ Modified Julian Date
  CST6CDT     GB-Eire   Japan     Poland    iso3166.tab
  Canada/     GMT       Kwajalein Portugal  posixrules
  Chile/      GMT+0     Libya     ROC       zone.tab
-
 = よくできてた！
-
 = よくできてた！
  $ bundle exec rake tzinfo:patch
    :
