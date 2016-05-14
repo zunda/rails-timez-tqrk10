@@ -223,6 +223,7 @@ Modified Julian Date
 = ちなみに
 = github/tzinfo/ tzinfo-data
 = Timezone Data for TZInfo
+= あればこっちを使う
 = github/tzinfo/tzinfo-data
   # image
   # src = tzinfo-data-2016d.png
