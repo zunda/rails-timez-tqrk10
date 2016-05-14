@@ -143,9 +143,7 @@ Modified Julian Date
  => Mon, 11 Apr 2016 18:59:00 PDT -07:00
 
 = ユーザー毎のタイムゾーン
-
 = ※Pumaはマルチスレッド
-
 = ユーザー毎のタイムゾーン
  # enscript ruby
  Thread.new do
@@ -153,7 +151,6 @@ Modified Julian Date
    time_str = time.strftime("%H:%M")
      :
  end
-
 = ユーザー毎のタイムゾーン
  # enscript sh
  $ bundle exec rake timezones:sys:travel
@@ -162,9 +159,7 @@ Modified Julian Date
  03:00 UTC became 03:00 in HST (shuold be 17:00)
  03:00 UTC became 12:00 in EST (shuold be 22:00)
  03:00 UTC became 17:00 in Japan (shuold be 12:00)
-
 = ENV['TZ']変えるのはスレッドセーフじゃない
-
 = ユーザー毎のタイムゾーン
  # enscript ruby
  Thread.new do
@@ -172,14 +167,12 @@ Modified Julian Date
      in_time_zone(tz).strftime("%H:%M")
      :
  end
-
 = ユーザー毎のタイムゾーン
  # enscript sh
  $ bundle exec rake timezones:rails:travel
  Traveling time ...
  completed time travel
-
-= in_time_zone()はスレッドセーフっぽい
+= in_time_zoneはスレッドセーフっぽい
 
 = でもどうやって？
 
