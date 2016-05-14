@@ -246,6 +246,8 @@ Modified Julian Date
 = ちゃんとメンテナンスされてる！
 
 = あ、そういえば
+= Heroku Postgres
+= Heroku Postgres
  # enscript sql
  $ heroku pg:psql
  ---> Connecting to DATABASE_URL
@@ -255,8 +257,7 @@ Modified Julian Date
  ------------+--------------------
   2016-05-12 | 03:05:14.943494+00
  (1 row)
-
-Heroku PostgresもUTCで待ってます。
+UTCで待ってます。
 
 = ところで
 = サポート
