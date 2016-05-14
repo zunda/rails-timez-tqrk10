@@ -154,7 +154,7 @@ Modified Julian Date
 = ユーザー毎のタイムゾーン
  # enscript sh
  $ bundle exec rake timezones:sys:travel
- veling time ...!!!!
+ Traveling time ...!!!!
  03:00 UTC became 22:00 in Japan (shuold be 12:00)
  03:00 UTC became 03:00 in HST (shuold be 17:00)
  03:00 UTC became 12:00 in EST (shuold be 22:00)
