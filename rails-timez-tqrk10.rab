@@ -150,7 +150,7 @@ Modified Julian Date
  # enscript ruby
  Thread.new do
    ENV['TZ'] = tz
-   time_str = updated_at.strftime("%H:%M")
+   time_str = time.strftime("%H:%M")
      :
  end
 
@@ -168,8 +168,8 @@ Modified Julian Date
 = ユーザー毎のタイムゾーン
  # enscript ruby
  Thread.new do
-   time_str =
-     updated_at.in_time_zone(tz).strftime("%H:%M")
+   time_str = time_with_zone.\
+     in_time_zone(tz).strftime("%H:%M")
      :
  end
 
