@@ -15,6 +15,9 @@
 : theme
    lightning-talk-with-code
 
+= tl;dr
+= TZInfo\ngem\nすごい
+
 = @zundan
   # image
   # src = anmitsu.jpg
@@ -183,7 +186,7 @@ Modified Julian Date
 = github/tzinfo/tzinfo
 = Ruby Timezone Library
 = メンテナンス大変じゃね？
-= "TZInfo will search for a zoneinfo directory"
+= "search for a zoneinfo directory"
 = Zoneinfo directory
  # enscript ruby
  > require 'tzinfo/data'
@@ -250,6 +253,8 @@ UTCで待ってます。
 = どこのタイムゾーンで昨日よー
 = そもそも 今 何日よー
 = 時刻には日付とタイムゾーンもよろしく
+
+= タイムゾーン重要
 
 = URLs
 * @heroku/status/719712029343395841
