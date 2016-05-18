@@ -38,7 +38,7 @@
 = @edmundleexz
   # image
   # src = ttaas-irb.png
-  # relative_width = 100
+  # relative_height = 100
 
 = mjd?
  # enscript ruby
