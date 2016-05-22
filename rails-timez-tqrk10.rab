@@ -59,7 +59,14 @@
 
 Modified Julian Date
 
-= mjd!
+= 再現してみよう
+= HerokuはUTC
+ # enscript sh
+ $ heroku run date +%Z
+ Running date +%Z ... up, run.1234
+ UTC
+
+= RailsをPDTに
  # enscript ruby
  # config/application.rb
  module RailsTimez
@@ -68,12 +75,6 @@ Modified Julian Date
      config.time_zone = 'America/Los_Angeles'
    end
  end
-
-= mjd!
- # enscript sh
- $ heroku run date +%Z
- Running date +%Z ... up, run.1234
- UTC
 
 = mjd!
  # enscript ruby
@@ -119,13 +120,15 @@ Modified Julian Date
    Time.new(2016, 4, 11, 18, 59, 0, "-07:00"))
  => 2016-04-12 01:59:00 +0000
 
-今日:
 * 4月12日 (UTC +00:00)
 * 4月11日 (PDT -07:00)
 
-= Railsを知らない子はRailsの設定を知らない
+= Railsを知らない子はその設定を知らない
+= Date.todayはRuby
+= 昨日と明日はRails
 
-= @jnchito「RailsならTimeWithZoneを使う」
+= qiita.com/jnchito
+= 「RailsならTimeWithZoneを使う」
 
 = TimeWithZone
  # enscript ruby
@@ -145,7 +148,6 @@ Modified Julian Date
  > Time.zone.now
  => Mon, 11 Apr 2016 18:59:00 PDT -07:00
 
-今日:
 * 4月12日 (UTC +00:00)
 * 4月11日 (PDT -07:00)
 
@@ -184,7 +186,7 @@ Modified Julian Date
 = どうやって？
 = どうやって？
  # enscript sh
- $ grep tzinfo Gemfile.lock
+ $ grep tz Gemfile.lock
       tzinfo (~> 1.1)
     tzinfo (1.2.2)
 = github/tzinfo/tzinfo
