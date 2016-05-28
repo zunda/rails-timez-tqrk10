@@ -61,10 +61,10 @@ Modified Julian Date
 
 = 再現してみよう
 = HerokuはUTC
- # enscript sh
+ # pango
  $ heroku run date +%Z
  Running date +%Z ... up, run.1234
- UTC
+ <span foreground="red">UTC</span>
 
 = RailsをPDTに
  # enscript ruby
